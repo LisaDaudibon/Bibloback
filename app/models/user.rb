@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :jwt_authenticatable,
 	       jwt_revocation_strategy: JwtDenylist
 
-  belongs_to :reading_list
-  belongs_to :reading_goal
+  has_one :reading_list
+  has_one :reading_goal
   has_many :comments, dependent: :destroy
 
 
