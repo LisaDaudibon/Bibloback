@@ -3,5 +3,5 @@ class ReadingItem < ApplicationRecord
   belongs_to :reading_goal
   belongs_to :reading_list
 
-
+  validates :read, inclusion: [true, false]
 end
