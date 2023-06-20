@@ -7,7 +7,6 @@ class CreateReadingGoals < ActiveRecord::Migration[7.0]
       t.date :start_date
       t.date :end_date
 
-      t.belongs_to :books, index: true
       t.belongs_to :user, index: true
 
       t.timestamps
