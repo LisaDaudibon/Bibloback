@@ -1,0 +1,2 @@
+class ReadingGoal < ApplicationRecord
+end
