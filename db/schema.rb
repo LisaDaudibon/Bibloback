@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_135918) do
 
   create_table "reading_goals", force: :cascade do |t|
     t.integer "pages"
-    t.boolean "complete"
+    t.boolean "complete", default: false
     t.integer "rating"
     t.date "start_date"
     t.date "end_date"
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_135918) do
   end
 
   create_table "reading_items", force: :cascade do |t|
-    t.boolean "read"
+    t.boolean "read", default: false
     t.bigint "book_id"
     t.bigint "reading_goal_id"
     t.bigint "reading_list_id"
