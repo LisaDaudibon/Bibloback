@@ -8,6 +8,7 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :published_date, presence: true
   validates :category, presence: true
-  validates :pages, numericality: true
+  # validates :pages,
+  #   numericality: { only_integer: true }
 
 end
