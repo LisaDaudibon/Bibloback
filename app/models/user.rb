@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable,
 	       jwt_revocation_strategy: JwtDenylist
+
+  belongs_to :reading_list
+  belongs_to :reading_goal
+  has_many :comments, dependent: :destroy
+
+
 end
