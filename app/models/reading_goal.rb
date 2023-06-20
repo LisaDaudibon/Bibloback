@@ -6,4 +6,5 @@ class ReadingGoal < ApplicationRecord
   validates :pages, numericality: { only_integer: true }
   validates :rating, numericality: { only_integer: true }
   validates :complete, inclusion: [true, false]
+  validates :start_date, presence: true
 end
