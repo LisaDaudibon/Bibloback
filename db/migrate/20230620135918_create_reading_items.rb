@@ -3,9 +3,9 @@ class CreateReadingItems < ActiveRecord::Migration[7.0]
     create_table :reading_items do |t|
       t.boolean :read
 
-      belongs_to :book, index: true
-      belongs_to :reading_goal, index: true
-      belongs_to :reading_list, index: true
+      t.belongs_to :book, index: true
+      t.belongs_to :reading_goal, index: true
+      t.belongs_to :reading_list, index: true
 
       t.timestamps
     end
