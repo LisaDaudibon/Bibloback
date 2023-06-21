@@ -5,11 +5,9 @@ RSpec.describe User, type: :model do
   before(:all) do
     FactoryBot.reload
   end
-
+  
   #  FactoryBot cree l'objet user
   let(:user) { FactoryBot.build(:user) }
-
-  # ...
   describe 'factory user' do
     it 'creates a valid user' do
       user = FactoryBot.build(:user)
@@ -43,8 +41,14 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
-   
-  
+    it 'validates uniqueness of pseudo' do
+      existing_user = FactoryBot.create(:user, pseudo: 'example')
+      user = FactoryBot.build(:user, pseudo: 'example')
+      expect(user).not_to be_valid
+      expect(user.errors[:pseudo]).to include('has already been taken')
+    end
+    
+    
   end
 
 end
