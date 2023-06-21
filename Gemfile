@@ -48,6 +48,13 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'nyan-cat-formatter'
 end
 
 group :development do
@@ -71,4 +78,4 @@ gem 'dotenv-rails'
 gem 'table_print'
 gem 'devise'
 gem 'devise-jwt'
-
+gem 'faker'
