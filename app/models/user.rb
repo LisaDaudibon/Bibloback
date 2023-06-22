@@ -6,7 +6,9 @@ class User < ApplicationRecord
          :jwt_authenticatable,
 	       jwt_revocation_strategy: JwtDenylist
 
-  validates :pseudo, uniqueness: true
+  validates :pseudo,
+    uniqueness: true,
+    presence: true
 
   after_create :new_reading_list
   after_create :create_reading_goal
