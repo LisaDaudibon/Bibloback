@@ -99,6 +99,8 @@ GEM
       devise (~> 4.0)
       warden-jwt_auth (~> 0.8)
     diff-lcs (1.5.0)
+    dockerfile-rails (1.4.2)
+      rails
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -274,6 +276,7 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
+  dockerfile-rails (>= 1.4)
   dotenv-rails
   factory_bot_rails
   faker
