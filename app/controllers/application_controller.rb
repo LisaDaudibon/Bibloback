@@ -9,5 +9,12 @@ class ApplicationController < ActionController::API
       u.permit(:pseudo, :email, :password, :password_confirmation, :current_password)
     end
   end
-  
+
+  private
+
+  def check_admin
+    unless current_user.admin?
+      render json: { error: "accès refusé" }, status: :unauthorized
+    end
+  end
 end
