@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show update destroy ]
 
+  # before_action :authenticate_user!, only: %i[index]
+  # before_action :check_admin, only: %i[index]
+
   # GET /books
   def index
     @books = Book.all
