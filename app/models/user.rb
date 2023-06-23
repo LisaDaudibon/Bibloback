@@ -17,8 +17,10 @@ class User < ApplicationRecord
   has_one :reading_goal
   has_many :comments, dependent: :destroy
 
+  def admin?
+    admin == true
+  end
 
-  
   private
     def new_reading_list
       @reading_list = ReadingList.create(user_id: self.id)
