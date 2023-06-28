@@ -11,10 +11,10 @@ class User < ApplicationRecord
     presence: true
 
   after_create :new_reading_list
-  after_create :create_reading_goal
+  # after_create :create_reading_goal
 
   has_one :reading_list
-  has_one :reading_goal
+  # has_one :reading_goal
   has_many :comments, dependent: :destroy
 
   def admin?
@@ -26,8 +26,8 @@ class User < ApplicationRecord
       @reading_list = ReadingList.create(user_id: self.id)
     end
 
-    def create_reading_goal
-      @reading_goal = ReadingGoal.create(user_id: self.id)
-      # add list items to @list
-    end
+    # def create_reading_goal
+    #   @reading_goal = ReadingGoal.create(user_id: self.id)
+    #   # add list items to @list
+    # end
 end
