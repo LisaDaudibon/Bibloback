@@ -46,6 +46,6 @@ class ReadingListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_list_params
-      params.require(:reading_list).permit(:read, :user)
+      params.require(:reading_list).permit(:read, :user_id)
     end
 end
