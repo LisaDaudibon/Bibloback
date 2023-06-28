@@ -46,6 +46,6 @@ class ReadingGoalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_goal_params
-      params.require(:reading_goal).permit(:pages, :complete, :rating, :start_date, :end_date)
+      params.require(:reading_goal).permit(:pages, :complete, :rating, :start_date, :end_date, :user)
     end
 end

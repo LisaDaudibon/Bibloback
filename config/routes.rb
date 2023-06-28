@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
   resources :reading_goals
+  resources :reading_items
   resources :reading_lists
   resources :books
   devise_for :users,
