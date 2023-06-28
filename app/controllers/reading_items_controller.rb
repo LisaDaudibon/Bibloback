@@ -41,11 +41,11 @@ class ReadingItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reading_item
-      @reading_item = ReadingGoal.find(params[:id])
+      @reading_item = ReadingItem.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def reading_item_params
-      params.require(:reading_item).permit(:pages, :complete, :rating, :start_date, :end_date)
+      params.require(:reading_item).permit(:read, :book_id, :reading_goal_id, :reading_list_id)
     end
 end
