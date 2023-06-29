@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :comments
   resources :reading_goals
   resources :reading_items
-  resources :reading_lists
+  resources :reading_lists do
+    get 'books', on: :member
+  end
   resources :books
   devise_for :users,
       controllers: {
