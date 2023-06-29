@@ -48,11 +48,6 @@ class ReadingListsController < ApplicationController
       # Access the associated books through the `books` association of the reading_list object
       books = reading_list.books
       # Convert the books array to a simple array of book titles
-      book_titles = books.map(&:title)
-      book_authors = books.map(&:author)
-      book_categories = books.map(&:category)
-      book_pages = books.map(&:pages)
-      book_published_dates = books.map{|book| book.published_date}
 
       render json: { 
         books: 
@@ -62,12 +57,11 @@ class ReadingListsController < ApplicationController
           category: book.category,
           pages: book.pages,
           published_date: book.published_date
-      }} }
+      }}}
 
     rescue => error
       puts "Error fetching reading list: #{error}"
       render json: { error: 'Internal server error' }, status: 500
-
     end
   end
 
