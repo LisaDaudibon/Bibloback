@@ -46,6 +46,6 @@ class ReadingItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reading_item_params
-      params.require(:reading_item).permit(:read, :book_id, :reading_goal_id, :reading_list_id)
+      params.require(:reading_item).permit(:read, :book_id, :reading_list_id)
     end
 end

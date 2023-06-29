@@ -38,6 +38,33 @@ class ReadingListsController < ApplicationController
     @reading_list.destroy
   end
 
+  # GET /reading_lists/:id/books
+  def books
+    begin
+      reading_list = ReadingList.includes(:books).find(params[:id])
+      if reading_list.nil?
+        return json_error(404, 'Reading list not found')
+      end
+      # Access the associated books through the `books` association of the reading_list object
+      books = reading_list.books
+      # Convert the books array to a simple array of book titles
+
+      render json: { 
+        books: 
+        books.map { |book| {
+          title: book.title,
+          author: book.author,
+          category: book.category,
+          pages: book.pages,
+          published_date: book.published_date
+      }}}
+
+    rescue => error
+      puts "Error fetching reading list: #{error}"
+      render json: { error: 'Internal server error' }, status: 500
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reading_list
