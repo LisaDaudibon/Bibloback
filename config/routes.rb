@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
     get '/member-data', to: 'members#show'
+    get '/member-datas', to: 'members#index'
 
   root "books#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
