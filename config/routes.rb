@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :reading_items
   resources :reading_lists do
     get 'books', on: :member
+    member do
+      delete 'remove_book/:book_id', action: 'remove_book', as: 'remove_book'
+    end
   end
   resources :books
   devise_for :users,
