@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show update destroy ]
+  # before_action :set_book, only: %i[ show update destroy ]
 
   # before_action :authenticate_user!, only: %i[index]
   # before_action :check_admin, only: %i[index]
@@ -11,10 +11,10 @@ class BooksController < ApplicationController
     render json: @books
   end
 
-  # GET /books/1
-  def show
-    render json: @book
-  end
+  # # GET /books/1
+  # def show
+  #   render json: @book
+  # end
 
   # POST /books
   def create
@@ -28,18 +28,18 @@ class BooksController < ApplicationController
   end
 
   # PATCH/PUT /books/1
-  def update
-    if @book.update(book_params)
-      render json: @book
-    else
-      render json: @book.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @book.update(book_params)
+  #     render json: @book
+  #   else
+  #     render json: @book.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /books/1
-  def destroy
-    @book.destroy
-  end
+  # # DELETE /books/1
+  # def destroy
+  #   @book.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
