@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :reading_items
   resources :reading_lists do
     get 'books', on: :member
+    member do
+      delete 'remove_book/:book_id', action: 'remove_book', as: 'remove_book'
+    end
   end
   resources :books
   devise_for :users,
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
       }
     get '/member-data', to: 'members#show'
+    get '/member-datas', to: 'members#index'
 
   root "books#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
