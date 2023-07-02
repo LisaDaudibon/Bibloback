@@ -5,6 +5,7 @@
 Le front a été créé avec Vite et utilise React et Javascript. Le back a été créé en utilisant Rails. <br>
 <br>
 Lien du front du site en production : https://biblofront.vercel.app/ <br>
+Lien du Github pour le front : https://github.com/LisaDaudibon/Bibloback<br>
 Lien du back du site en production : https://bibloback.fly.dev/<br>
 <br>
 Vous vous trouvez dans le back. 
