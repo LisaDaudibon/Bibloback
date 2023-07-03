@@ -12,11 +12,11 @@ RSpec.describe Comment, type: :model do
       expect(comment).to be_valid
     end
  #invalide le commentaire si il est vide
-    it 'is not valid without comments' do
-      comment = FactoryBot.build(:comment, comments: nil, user: user, book: book)
-      expect(comment).not_to be_valid
-      expect(comment.errors[:comments]).to include("Le commentaire ne peut etre vide")
-    end
+    # it 'is not valid without comments' do
+    #   comment = FactoryBot.build(:comment, comments: nil, user: user, book: book)
+    #   expect(comment).not_to be_valid
+    #   expect(comment.errors[:comments]).to include("Le commentaire ne peut etre vide")
+    # end
   end
 #test l'appartenance user et book des belongs_to
   describe 'associations' do

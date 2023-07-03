@@ -6,7 +6,7 @@ RSpec.describe ReadingItem, type: :model do
     @book = FactoryBot.create(:book)
     @reading_list = FactoryBot.create(:reading_list, user: @user)
 
-    @reading_item = FactoryBot.create(:reading_item, book: @book, reading_list: @reading_list, reading_goal: @reading_goal)
+    @reading_item = FactoryBot.create(:reading_item, book: @book, reading_list: @reading_list)
   end
 
   context "'factory book" do
