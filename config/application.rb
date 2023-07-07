@@ -20,6 +20,9 @@ module Bibloback
     # Required for all session management (regardless of session_store)
     config.middleware.use ActionDispatch::Cookies
 
+     # Add the following line to mount Rack Attack middleware
+    config.middleware.use Rack::Attack
+
     config.middleware.use config.session_store, config.session_options
 
     # config.time_zone = "Central Time (US & Canada)"

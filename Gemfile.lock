@@ -165,6 +165,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.7)
+    rack-attack (6.6.1)
+      rack (>= 1.0, < 3)
     rack-cors (2.0.1)
       rack (>= 2.0.0)
     rack-test (2.1.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   nyan-cat-formatter
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-attack
   rack-cors
   rails (~> 7.0.5)
   rails-controller-testing
